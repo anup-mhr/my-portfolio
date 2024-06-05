@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Nav,
   NavLink,
@@ -16,26 +15,26 @@ import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { Bio } from "../../data/constants";
 import { useTheme } from "styled-components";
+import { useState } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
   return (
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <a
+          <div
             style={{
               display: "flex",
               alignItems: "center",
               color: "white",
-              marginBottom: "20;",
+              marginBottom: "20",
               cursor: "pointer",
             }}
-            href="/"
           >
             <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+          </div>
         </NavLogo>
         <MobileIcon>
           <FaBars
@@ -108,7 +107,7 @@ const Navbar = () => {
               href={Bio.github}
               target="_blank"
             >
-              Github Profile
+              Github
             </GitHubButton>
           </MobileMenu>
         )}

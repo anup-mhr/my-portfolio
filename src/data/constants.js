@@ -174,7 +174,7 @@ export const projects = [
       "TypeORM",
       "Socket.io",
     ],
-    category: "FullStack",
+    category: "Fullstack, Frontend, Backend",
     github: "https://github.com/anup-mhr/Lets-meet.git",
     webapp: "https://letss-meet.netlify.app/",
   },
@@ -225,14 +225,14 @@ export const projects = [
       "A portal for efficiently booking desired seats and tickets for your upcoming movies",
     image: "/assets/AM-Movies-pic.png",
     tags: ["Html", "CSS", "Javascript", "Java", "MySQL"],
-    category: "FullStack",
+    category: "Fullstack, Frontend, Backend",
     github: "https://github.com/anup-mhr/movie-ticket-booking.github.io.git",
     webapp: "",
   },
   {
     id: 5,
     title: "Viper Vision",
-    date: "Noc 2023 - Jan 2024",
+    date: "Nov 2023 - Jan 2024",
     description:
       "IoT project where locomotion of Snake is implemented along with camera and mobile control.",
     image:
@@ -241,6 +241,12 @@ export const projects = [
     category: "IoT",
     github: "https://github.com/anup-mhr/Viper-Vision.git",
     webapp: "",
+    member: [
+      { name: "Anish", img: "anish", github: "", linkedin: "" },
+      { name: "Reema", img: "reema", github: "", linkedin: "" },
+      { name: "Abiral", img: "abiral", github: "", linkedin: "" },
+      { name: "bBijen", img: "bijen", github: "", linkedin: "" },
+    ],
   },
   {
     id: 6,

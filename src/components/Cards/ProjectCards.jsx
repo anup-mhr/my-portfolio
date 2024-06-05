@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -16,7 +15,7 @@ const Button = styled.button`
 `;
 const Card = styled.div`
   width: 330px;
-  height: 490px;
+  height: 400px;
   background-color: ${({ theme }) => theme.card};
   cursor: pointer;
   border-radius: 10px;
@@ -122,7 +121,7 @@ const Avatar = styled.img`
 
 const ProjectCards = ({ project, setOpenModal }) => {
   return (
-    <Card onClick={() => setOpenModal({ state: true, project: project })}>
+    <Card onClick={() => setOpenModal({ state: true, project })}>
       <Image src={project.image} />
       <Tags>
         {project.tags?.map((tag, index) => (
@@ -135,11 +134,10 @@ const ProjectCards = ({ project, setOpenModal }) => {
         <Description>{project.description}</Description>
       </Details>
       <Members>
-        {project.member?.map((member) => (
-          <Avatar src={member.img} />
+        {project.member?.map((member, i) => (
+          <Avatar key={i} src={member.img} alt={member.name} />
         ))}
       </Members>
-      {/* <Button>View Project</Button> */}
     </Card>
   );
 };

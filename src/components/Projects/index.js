@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import {
   Container,
@@ -24,66 +23,48 @@ const Projects = ({ openModal, setOpenModal }) => {
           apps. Here are some of my projects.
         </Desc>
         <ToggleButtonGroup>
-          {toggle === "all" ? (
-            <ToggleButton active value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          ) : (
-            <ToggleButton value="all" onClick={() => setToggle("all")}>
-              All
-            </ToggleButton>
-          )}
+          <ToggleButton
+            active={toggle === "all"}
+            value="all"
+            onClick={() => setToggle("all")}
+          >
+            All
+          </ToggleButton>
+
           <Divider />
-          {toggle === "React App" ? (
-            <ToggleButton
-              active
-              value="React App"
-              onClick={() => setToggle("React App")}
-            >
-              React APP's
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="React App"
-              onClick={() => setToggle("React App")}
-            >
-              React APP's
-            </ToggleButton>
-          )}
+          <ToggleButton
+            active={toggle === "Backend"}
+            value="Backend"
+            onClick={() => setToggle("Backend")}
+          >
+            Backend
+          </ToggleButton>
+
           <Divider />
-          {toggle === "Node App" ? (
-            <ToggleButton
-              active
-              value="Node App"
-              onClick={() => setToggle("Node App")}
-            >
-              Node APP's
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="Node App"
-              onClick={() => setToggle("Node App")}
-            >
-              Node APP's
-            </ToggleButton>
-          )}
+          <ToggleButton
+            active={toggle === "Frontend"}
+            value="Frontend"
+            onClick={() => setToggle("Frontend")}
+          >
+            Frontend
+          </ToggleButton>
+
           <Divider />
-          {toggle === "Mern App" ? (
-            <ToggleButton
-              active
-              value="Mern App"
-              onClick={() => setToggle("Mern App")}
-            >
-              Mern App's
-            </ToggleButton>
-          ) : (
-            <ToggleButton
-              value="Mern App"
-              onClick={() => setToggle("Mern App")}
-            >
-              Mern App's
-            </ToggleButton>
-          )}
+          <ToggleButton
+            active={toggle === "Fullstack"}
+            value="Fullstack"
+            onClick={() => setToggle("Fullstack")}
+          >
+            Fullstack
+          </ToggleButton>
+          <Divider />
+          <ToggleButton
+            active={toggle === "IoT"}
+            value="IoT"
+            onClick={() => setToggle("IoT")}
+          >
+            IoT
+          </ToggleButton>
         </ToggleButtonGroup>
         <CardContainer>
           {toggle === "all" &&
@@ -96,7 +77,7 @@ const Projects = ({ openModal, setOpenModal }) => {
               />
             ))}
           {projects
-            .filter((item) => item.category === toggle)
+            .filter((item) => item.category.includes(toggle))
             .map((project, index) => (
               <ProjectCard
                 key={index}
