@@ -139,10 +139,10 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_57t7p3k",
-        "template_cx8j13a",
+        "service_nggjn6l",
+        "template_4wcup6p",
         form.current,
-        "TfQJ1CWcvWCKVUaSO"
+        "QYyW67Kc2sn-aN8n4"
       )
       .then(
         (result) => {

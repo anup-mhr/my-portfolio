@@ -210,7 +210,7 @@ export const projects = [
     date: "July 2023 - July 2023",
     description:
       "A news portal with an easy-to-use interface where different types of news can be found",
-    image: "/assets/newswave.png",
+    image: "/assets/newswave.PNG",
     tags: ["React Js", "Bootstrap", "Api"],
     category: "Frontend",
     github: "https://github.com/anup-mhr/NewsWave.git",
@@ -235,17 +235,31 @@ export const projects = [
     date: "Nov 2023 - Jan 2024",
     description:
       "IoT project where locomotion of Snake is implemented along with camera and mobile control.",
-    image:
-      "https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/414650582_794887602655502_3933939248528904260_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ol7-zh-N-d4Q7kNvgH3dIhN&_nc_ht=scontent.fktm17-1.fna&oh=00_AYD3X-SxQMxreq-IAAfcViPa-joafnx7rqFDb1u05869aw&oe=665BA76B",
+    image: "/assets/viper-vision.jpg",
     tags: ["IoI", "C++"],
     category: "IoT",
     github: "https://github.com/anup-mhr/Viper-Vision.git",
     webapp: "",
     member: [
-      { name: "Anish", img: "anish", github: "", linkedin: "" },
-      { name: "Reema", img: "reema", github: "", linkedin: "" },
-      { name: "Abiral", img: "abiral", github: "", linkedin: "" },
-      { name: "bBijen", img: "bijen", github: "", linkedin: "" },
+      {
+        name: "Anish",
+        img: "/assets/anish.jpg",
+        github: "",
+        linkedin: "https://www.linkedin.com/in/anish-shrestha-131218264",
+      },
+      { name: "Reema", img: "/assets/Reema.jpg", github: "", linkedin: "" },
+      {
+        name: "Abiral",
+        img: "https://media.licdn.com/dms/image/D4D03AQFvuz5pNqemug/profile-displayphoto-shrink_800_800/0/1705998134780?e=1723075200&v=beta&t=QfIMQUPH1mraSbielMKbLUGLsX67LrFrsqgTjresuDM",
+        github: "",
+        linkedin: "https://www.linkedin.com/in/abiral-shrestha-762603267/",
+      },
+      {
+        name: "Bijen",
+        img: "https://media.licdn.com/dms/image/D4D03AQEMfRCpLLt5xQ/profile-displayphoto-shrink_800_800/0/1711768466360?e=1723075200&v=beta&t=nPCe5NuMGXUlZn9LMmx4CvYaPz_m-teJeBI6W5WkMJQ",
+        github: "",
+        linkedin: "https://www.linkedin.com/in/bijen-risal-33468228b/",
+      },
     ],
   },
   {
@@ -267,7 +281,7 @@ export const projects = [
     date: " Dec 2022 - Jan 2023",
     description:
       "A healthcare website where user can book appointments with doctors and see their respective timings.",
-    image: "/assets/trafagal-pic.png",
+    image: "/assets/trafagal-pic.PNG",
     tags: ["Html", "CSS", "Javascript"],
     category: "Frontend",
     github: "https://github.com/anup-mhr/healthcare-website.git",
