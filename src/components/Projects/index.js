@@ -65,6 +65,14 @@ const Projects = ({ openModal, setOpenModal }) => {
           >
             IoT
           </ToggleButton>
+          <Divider />
+          <ToggleButton
+            active={toggle === "AI Integration"}
+            value="AI Integration"
+            onClick={() => setToggle("AI Integration")}
+          >
+            AI Integration
+          </ToggleButton>
         </ToggleButtonGroup>
         <CardContainer>
           {toggle === "all" &&

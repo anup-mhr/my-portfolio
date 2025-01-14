@@ -95,6 +95,11 @@ export const skills = [
         image:
           "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
       },
+      {
+        name: "Typescript",
+        image:
+          "https://th.bing.com/th/id/OIP.maKe3jXsLd8flovNsX2_3QHaHa?rs=1&pid=ImgDetMain",
+      },
       // {
       //   name: "Docker",
       //   image:
@@ -142,7 +147,7 @@ export const education = [
     school: "Virinchi College",
     date: "2021-2025",
     grade: "- CGPA",
-    desc: "I am currently in 7th semester.",
+    desc: "I am currently for the result.",
     degree: "Bachelor in Information & Communication Technology",
   },
   {
@@ -159,12 +164,39 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    title: "talk-to-ai-agent-openai-webRTC",
+    date: "Dec 2024 - Jan 2025",
+    description:
+      "Demonstrates how to connect your business with AI Agent (Openai WebRTC) with RAG functionalities",
+    image:
+      "https://th.bing.com/th/id/OIP.q7Qs4-t2b1KXdSzUh8_w5wHaHa?rs=1&pid=ImgDetMain",
+    tags: ["React Js", "Node Js", "Express Js", "Typescript", "Open AI"],
+    category: "Fullstack, Frontend, Backend, AI Integration",
+    github: "https://github.com/anup-mhr/talk-to-ai-agent-openai-webRTC-.git",
+    webapp: "",
+  },
+  {
+    id: 1,
+    title: "twilio-openai-RTC",
+    date: "Dec 2025 - Dec 2025",
+    description:
+      "Using OpenAI Realtime API to build a Twilio Voice AI assistant with Node.js",
+    image:
+      "https://th.bing.com/th/id/OIP.q7Qs4-t2b1KXdSzUh8_w5wHaHa?rs=1&pid=ImgDetMain",
+    tags: ["Open AI", "Twilio", "Node Js", "Express Js", "ws", "Socket.io"],
+    category: "AI Integration, Backend",
+    github: "https://github.com/anup-mhr/twilio-openai-RTC.git",
+    webapp: "",
+  },
+
+  {
+    id: 2,
     title: "Lets-Meet",
     date: "Feb 2024 - Mar 2024",
     description:
       "Google Meet like appication where one can create room and share room id and chat as well as video call",
     image:
-      "https://media.licdn.com/dms/image/D5622AQH6pYfFxOp4BA/feedshare-shrink_1280/0/1715345925771?e=1720051200&v=beta&t=tn0wN_QTgCaXVeU0QehJ8jhc3Pw7TLQSvvYymSlH8bU",
+      "https://media.licdn.com/dms/image/v2/D5622AQH6pYfFxOp4BA/feedshare-shrink_1280/feedshare-shrink_1280/0/1715345925771?e=1740009600&v=beta&t=IFoPrTQAy2EjC894llmI4h1vIAQl2xV_3gTuyV7h7y4",
     tags: [
       "React Js",
       "Postgres",
@@ -178,9 +210,8 @@ export const projects = [
     github: "https://github.com/anup-mhr/Lets-meet.git",
     webapp: "https://letss-meet.netlify.app/",
   },
-
   {
-    id: 1,
+    id: 3,
     title: "ArtCanvas",
     date: "May 2024 - May 2024",
     description:
@@ -192,20 +223,20 @@ export const projects = [
     webapp: "https://art-canvass.netlify.app/",
   },
   {
-    id: 2,
+    id: 4,
     title: "EveryShop",
     date: "Oct 2024 - Oct 2023",
     description:
       "Everyday use of shopping with our E-commerce Web App. User-friendly interface and seamless synchronization across devices make it a must-have for staying productive on the go",
     image:
-      "https://media.licdn.com/dms/image/D5622AQFR4ilUa7NGBw/feedshare-shrink_2048_1536/0/1699673909654?e=1720051200&v=beta&t=y_gklecRmnU8k_HHsltt8j7Znei-zzGh-mu3mYkKAb8",
+      "https://media.licdn.com/dms/image/v2/D5622AQFR4ilUa7NGBw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1699673909654?e=1740009600&v=beta&t=i0kCH6L5EC4Bs3JK5Z5JnSTdBXmIBOFcDWM3eOWP5Uk",
     tags: ["HTML", "CSS", "Javascript"],
     category: "Frontend",
     github: "https://github.com/anup-mhr/E-commerce-vanilla-js.git",
     webapp: "https://everyshop-anup.netlify.app/",
   },
   {
-    id: 3,
+    id: 5,
     title: "NewsWave",
     date: "July 2023 - July 2023",
     description:
@@ -218,7 +249,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 6,
     title: "Movie Ticket Booking System",
     date: "Fev 2023- Apr 2023",
     description:
@@ -230,7 +261,7 @@ export const projects = [
     webapp: "",
   },
   {
-    id: 5,
+    id: 7,
     title: "Viper Vision",
     date: "Nov 2023 - Jan 2024",
     description:
@@ -250,20 +281,20 @@ export const projects = [
       { name: "Reema", img: "/assets/Reema.jpg", github: "", linkedin: "" },
       {
         name: "Abiral",
-        img: "https://media.licdn.com/dms/image/D4D03AQFvuz5pNqemug/profile-displayphoto-shrink_800_800/0/1705998134780?e=1723075200&v=beta&t=QfIMQUPH1mraSbielMKbLUGLsX67LrFrsqgTjresuDM",
+        img: "https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/354219474_1771946739929625_6148853253180224170_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG2hjmZxZUN84Wl6rGmBwSi-PqhkRuOkl_4-qGRG46SX2WjFxjbkp7e-QYI0RoWUBeSchyUkr4-Mp4i7aViSVQG&_nc_ohc=PEELoCpsKAkQ7kNvgEeSrfM&_nc_oc=AdjaRIfu4Ipvvj5ndp1PLR_fpSJQEXCp8DhK31IGp5AV3m4u2A5Wr3CqRL5eiany8VdzOoGw7PDjzRfiMijgQwu7&_nc_zt=23&_nc_ht=scontent.fktm17-1.fna&_nc_gid=AeHzbFQmxB6PajE2h7hxp5Q&oh=00_AYASglGgjHs82FSbT6iHgKo4VZShEyzhz3POaxZ2SLiMEg&oe=678BEF0E",
         github: "",
         linkedin: "https://www.linkedin.com/in/abiral-shrestha-762603267/",
       },
       {
         name: "Bijen",
-        img: "https://media.licdn.com/dms/image/D4D03AQEMfRCpLLt5xQ/profile-displayphoto-shrink_800_800/0/1711768466360?e=1723075200&v=beta&t=nPCe5NuMGXUlZn9LMmx4CvYaPz_m-teJeBI6W5WkMJQ",
+        img: "https://media.licdn.com/dms/image/v2/D4D03AQEMfRCpLLt5xQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711768466360?e=1742428800&v=beta&t=FglFEHRoaVwS-_oryJI6XDOeftnbBU2icEuW65JIa3g",
         github: "",
         linkedin: "https://www.linkedin.com/in/bijen-risal-33468228b/",
       },
     ],
   },
   {
-    id: 6,
+    id: 8,
     title: "Todo-List",
     date: "Oct 2023 - Oct 2023 ",
     description:
@@ -276,7 +307,7 @@ export const projects = [
   },
 
   {
-    id: 7,
+    id: 9,
     title: "Trafalgal",
     date: " Dec 2022 - Jan 2023",
     description:
