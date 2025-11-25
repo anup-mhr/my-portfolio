@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">
+        <NavLogo href="/">
           <div
             style={{
               display: "flex",
