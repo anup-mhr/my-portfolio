@@ -9,11 +9,11 @@ export const Bio = {
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/anup-mhr",
-  resume: "/assets/resume/CV-Anup Maharjan.pdf",
+  resume: "/assets/resume/CV-Anup-Maharjan.pdf",
   linkedin: "https://www.linkedin.com/in/anup-mhr/",
   // twitter: "",
-  // insta: "",
-  // facebook: "",
+  insta: "https://www.instagram.com/_anup_mhrzn/",
+  facebook: "https://www.facebook.com/anup.mhr.004",
 };
 
 export const skills = [
@@ -33,6 +33,11 @@ export const skills = [
         name: "JavaScript",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
+      },
+      {
+        name: "Typescript",
+        image:
+          "https://th.bing.com/th/id/OIP.maKe3jXsLd8flovNsX2_3QHaHa?rs=1&pid=ImgDetMain",
       },
       {
         name: "Bootstrap",
@@ -96,24 +101,29 @@ export const skills = [
           "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
       },
       {
-        name: "Typescript",
+        name: "Docker",
         image:
-          "https://th.bing.com/th/id/OIP.maKe3jXsLd8flovNsX2_3QHaHa?rs=1&pid=ImgDetMain",
+          "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
       },
-      // {
-      //   name: "Docker",
-      //   image:
-      //     "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      // },
+      {
+        name: "AWS EC2",
+        image:
+          "https://media.printables.com/media/prints/128175/images/1229540_1fa51ee6-6136-48b0-9c8b-44990845c1b4/thumbs/inside/1280x960/png/ec2-1.webp",
+      },
+      {
+        name: "AWS S3",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png",
+      },
       {
         name: "Postman",
         image:
-          "https://static-00.iconduck.com/assets.00/postman-icon-497x512-beb7sy75.png",
+          "https://w7.pngwing.com/pngs/17/131/png-transparent-postman-logo-thumbnail-tech-companies.png",
       },
       {
         name: "Swagger UI",
         image:
-          "https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png",
+          "https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png",
       },
     ],
   },
@@ -122,10 +132,29 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
+    img: "https://palmmind.com/images/palmmind-logo.webp",
+    role: "Full Stack Developer",
+    company: "Palm Mind technologies",
+    date: "Nov 2024 - present",
+    desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintainingdifferent backend projects. I also worked on creating a bot for my own college using botpress.",
+    skills: [
+      "Node Js",
+      "Express Js",
+      "MongoDb",
+      "Nest",
+      "React",
+      "S3",
+      "EC2",
+      "Python",
+    ],
+    doc: "",
+  },
+  {
+    id: 0,
     img: "https://www.amniltech.com/assets/img/logo.png",
     role: "Node Js Intern",
     company: "Amnil technologies",
-    date: "Jan 2024 - Apir 2024",
+    date: "Jan 2024 - Apr 2024",
     desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintainingdifferent backend projects. I also worked on creating a bot for my own college using botpress.",
     skills: [
       "Node Js",
@@ -143,11 +172,11 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://th.bing.com/th/id/OIP.BcsnSOwiRE9y1NpshTVAsQAAAA?rs=1&pid=ImgDetMain",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBYt3mOD3WetX0pCeXndLLLa7MdrkTSOSEg&s",
     school: "Virinchi College",
     date: "2021-2025",
-    grade: "- CGPA",
-    desc: "I am currently for the result.",
+    grade: "3.32 CGPA",
+    desc: "I graduated from Virinchi College with a Bachelor in Information & Communication Technology.",
     degree: "Bachelor in Information & Communication Technology",
   },
   {
@@ -195,8 +224,7 @@ export const projects = [
     date: "Feb 2024 - Mar 2024",
     description:
       "Google Meet like appication where one can create room and share room id and chat as well as video call",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5622AQH6pYfFxOp4BA/feedshare-shrink_1280/feedshare-shrink_1280/0/1715345925771?e=1740009600&v=beta&t=IFoPrTQAy2EjC894llmI4h1vIAQl2xV_3gTuyV7h7y4",
+    image: "/assets/lets-meet.jpeg",
     tags: [
       "React Js",
       "Postgres",
@@ -228,8 +256,7 @@ export const projects = [
     date: "Oct 2024 - Oct 2023",
     description:
       "Everyday use of shopping with our E-commerce Web App. User-friendly interface and seamless synchronization across devices make it a must-have for staying productive on the go",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5622AQFR4ilUa7NGBw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1699673909654?e=1740009600&v=beta&t=i0kCH6L5EC4Bs3JK5Z5JnSTdBXmIBOFcDWM3eOWP5Uk",
+    image: "assets/everyshop.jpeg",
     tags: ["HTML", "CSS", "Javascript"],
     category: "Frontend",
     github: "https://github.com/anup-mhr/E-commerce-vanilla-js.git",
@@ -281,13 +308,13 @@ export const projects = [
       { name: "Reema", img: "/assets/Reema.jpg", github: "", linkedin: "" },
       {
         name: "Abiral",
-        img: "https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/354219474_1771946739929625_6148853253180224170_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG2hjmZxZUN84Wl6rGmBwSi-PqhkRuOkl_4-qGRG46SX2WjFxjbkp7e-QYI0RoWUBeSchyUkr4-Mp4i7aViSVQG&_nc_ohc=PEELoCpsKAkQ7kNvgEeSrfM&_nc_oc=AdjaRIfu4Ipvvj5ndp1PLR_fpSJQEXCp8DhK31IGp5AV3m4u2A5Wr3CqRL5eiany8VdzOoGw7PDjzRfiMijgQwu7&_nc_zt=23&_nc_ht=scontent.fktm17-1.fna&_nc_gid=AeHzbFQmxB6PajE2h7hxp5Q&oh=00_AYASglGgjHs82FSbT6iHgKo4VZShEyzhz3POaxZ2SLiMEg&oe=678BEF0E",
+        img: "/assets/abiral.jpeg",
         github: "",
         linkedin: "https://www.linkedin.com/in/abiral-shrestha-762603267/",
       },
       {
         name: "Bijen",
-        img: "https://media.licdn.com/dms/image/v2/D4D03AQEMfRCpLLt5xQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711768466360?e=1742428800&v=beta&t=FglFEHRoaVwS-_oryJI6XDOeftnbBU2icEuW65JIa3g",
+        img: "/assets/bijen.jpeg",
         github: "",
         linkedin: "https://www.linkedin.com/in/bijen-risal-33468228b/",
       },

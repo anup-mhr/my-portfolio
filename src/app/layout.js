@@ -28,7 +28,7 @@ export const metadata = {
       "I build scalable backend systems and full-stack applications using modern web technologies.",
     images: [
       {
-        url: "/assets/og-image.jpg", // Replace with your image
+        url: "/assets/Anup.jpg", // Replace with your image
         width: 1200,
         height: 630,
         alt: "Anup Maharjan Portfolio",
@@ -41,7 +41,7 @@ export const metadata = {
     title: "Anup Maharjan – Full-Stack Web & Backend Developer",
     description:
       "Backend & Full-Stack Developer skilled in modern web technologies.",
-    images: ["/assets/twitter-image.jpg"], // Replace with your image
+    images: ["/assets/Anup.jpg"], // Replace with your image
   },
 
   themeColor: "#1C1C27",

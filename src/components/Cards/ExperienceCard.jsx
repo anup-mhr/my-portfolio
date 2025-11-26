@@ -75,9 +75,11 @@ const Top = styled.div`
 
 const Image = styled.img`
   height: 50px;
-  background-color: #000;
+  background-color: #f5e8fdff;
+  padding: 4px;
   border-radius: 10px;
   margin-top: 4px;
+  max-width: 150px;
   @media only screen and (max-width: 768px) {
     height: 40px;
   }
@@ -142,7 +144,7 @@ const ExperienceCard = ({ experience }) => {
   return (
     <Card>
       <Top>
-        <Image src={experience.img} />
+        <Image src={experience.img} alt="exp" />
         <Body>
           <Role>{experience.role}</Role>
           <Company>{experience.company}</Company>
