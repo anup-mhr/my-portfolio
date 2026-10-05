@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#a83237"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">AM</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 68 68">
+  <style>
+    .mark { stroke: #1f1f24; }
+    @media (prefers-color-scheme: dark) { .mark { stroke: #f6f4f2; } }
+  </style>
+  <path class="mark" d="M6 54 L20 12 L32 42 L44 12 L58 54" fill="none" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="square" />
+  <path d="M13 41 H28" stroke="#a83237" stroke-width="6" stroke-linecap="butt" />
 </svg>
