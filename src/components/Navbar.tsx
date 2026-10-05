@@ -1,76 +1,110 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bio, NAV_LINKS } from "../data/constants";
-import { LogoIcon, MenuIcon } from "./icons";
+import { CloseIcon, MenuIcon } from "./icons";
 
-const githubButton =
-  "flex h-[70%] items-center justify-center rounded-[20px] border-[1.8px] border-primary px-5 font-medium text-primary transition-all duration-[600ms] hover:bg-primary hover:text-white max-md:text-sm";
+const LINKS = [{ href: "#home", label: "Home" }, ...NAV_LINKS];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    LINKS.forEach(({ href }) => {
+      const el = document.querySelector(href);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-10 flex h-20 items-center justify-center bg-card-light">
-      <div className="z-[1] flex h-[60px] w-full max-w-[1200px] items-center justify-between px-6">
-        <a
-          href="#about"
-          className="flex w-4/5 items-center px-1.5 text-white max-sm:px-0"
-        >
-          <LogoIcon size="3rem" />
-          <span className="px-1 text-lg font-bold">Portfolio</span>
+    <header
+      className={`sticky top-0 z-40 bg-bg/90 backdrop-blur transition-shadow ${
+        scrolled ? "shadow-[0_1px_0_var(--color-line)]" : ""
+      }`}
+    >
+      <nav className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6">
+        <a href="#home" className="text-2xl font-light tracking-tight">
+          Anup<span className="font-semibold text-primary">.</span>
         </a>
 
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((open) => !open)}
-          className="absolute top-0 right-0 hidden -translate-x-full translate-y-[60%] cursor-pointer text-2xl text-fg max-md:block"
-        >
-          <MenuIcon />
-        </button>
-
-        <ul className="flex w-full items-center justify-center gap-8 px-1.5 max-md:hidden">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
+        <ul className="hidden items-center gap-1 md:flex">
+          {LINKS.map(({ href, label }) => (
+            <li key={href}>
               <a
-                href={link.href}
-                className="font-medium text-fg transition-colors hover:text-primary"
+                href={href}
+                className={`relative block px-4 py-6 text-sm transition-colors hover:text-primary ${
+                  active === href ? "text-fg" : "text-muted"
+                }`}
               >
-                {link.label}
+                {label}
+                <span
+                  className={`absolute inset-x-3 bottom-0 h-[3px] rounded-full bg-fg transition-opacity ${
+                    active === href ? "opacity-100" : "opacity-0"
+                  }`}
+                />
               </a>
             </li>
           ))}
-        </ul>
-
-        <div className="flex h-full w-4/5 items-center justify-end px-1.5 max-md:hidden">
-          <a href={Bio.github} target="_blank" rel="noreferrer" className={githubButton}>
-            Github Profile
-          </a>
-        </div>
-
-        {isOpen && (
-          <div className="absolute top-20 right-0 z-[1000] flex w-[calc(100vw-80px)] flex-col justify-center gap-4 rounded-b-[20px] bg-card-light/60 px-10 pt-3 pb-6 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] backdrop-blur">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="font-medium text-fg transition-colors hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
+          <li className="ml-3">
             <a
-              href={Bio.github}
+              href={Bio.resume}
               target="_blank"
               rel="noreferrer"
-              className={`${githubButton} w-max bg-primary px-4 py-2.5 text-white`}
+              className="rounded-full bg-surface px-4 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-white"
             >
-              Github
+              Resume
             </a>
-          </div>
-        )}
-      </div>
-    </nav>
+          </li>
+        </ul>
+
+        <button
+          type="button"
+          className="text-2xl md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+        >
+          {open ? <CloseIcon /> : <MenuIcon />}
+        </button>
+      </nav>
+
+      {open && (
+        <ul className="flex flex-col gap-1 border-t border-line bg-bg px-6 py-4 md:hidden">
+          {LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`block py-2 ${active === href ? "font-medium text-primary" : ""}`}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href={Bio.resume} target="_blank" rel="noreferrer" className="block py-2 text-primary">
+              Resume
+            </a>
+          </li>
+        </ul>
+      )}
+    </header>
   );
 }

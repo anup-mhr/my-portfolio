@@ -1,4 +1,5 @@
 import { useState } from "react";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -7,7 +8,6 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ProjectDetails from "./components/ProjectDetails";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
 import type { Project } from "./types";
 
 export default function App() {
@@ -16,25 +16,21 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className="w-full overflow-x-hidden bg-bg">
+      <main className="w-full overflow-x-hidden">
         <Hero />
-        <div className="section-gradient w-full">
-          <Skills />
-          <Experience />
-        </div>
+        <About />
+        <Experience />
         <Projects onSelect={setSelectedProject} />
-        <div className="section-gradient w-full">
-          <Education />
-          <Contact />
-        </div>
-        {selectedProject && (
-          <ProjectDetails
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
+        <Education />
+        <Contact />
       </main>
       <Footer />
+      {selectedProject && (
+        <ProjectDetails
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </>
   );
 }

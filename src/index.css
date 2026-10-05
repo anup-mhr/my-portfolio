@@ -1,27 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #1c1c27;
-  --color-bg-light: #1c1e27;
-  --color-primary: #854ce6;
-  --color-fg: #f2f3f4;
-  --color-muted: #b1b2b3;
-  --color-card: #171721;
-  --color-card-light: #191924;
+  --color-bg: #ffffff;
+  --color-surface: #f6f4f2;
+  --color-fg: #1a1a1a;
+  --color-heading: #3f4756;
+  --color-muted: #7a7f88;
+  --color-line: #e7e4e1;
+  --color-primary: #a83237;
+  --color-primary-dark: #8a262b;
 
-  --font-sans: Arial, Helvetica, sans-serif;
-
-  /* Original layout is desktop-first with a 960px tablet breakpoint. */
-  --breakpoint-tab: 60rem;
-
-  --shadow-glow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-
-  --animate-blink: blink 1s step-end infinite;
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Yellowtail", cursive;
 }
 
 html {
@@ -30,16 +20,9 @@ html {
 }
 
 body {
-  @apply bg-bg font-sans text-fg;
+  @apply bg-bg font-sans text-fg antialiased;
 }
 
-@utility section-gradient {
-  background:
-    linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%),
-    linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
-}
-
-@utility btn-gradient {
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+::selection {
+  @apply bg-primary text-white;
 }

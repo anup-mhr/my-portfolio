@@ -5,16 +5,16 @@ export default function SectionHeading({
   children,
 }: {
   title: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
-    <>
-      <h2 className="mt-5 text-center text-[42px] font-semibold text-fg max-md:mt-3 max-md:text-[32px]">
-        {title}
-      </h2>
-      <p className="max-w-[600px] text-center text-lg text-muted max-md:mt-3 max-md:text-base">
-        {children}
-      </p>
-    </>
+    <div className="mb-12 flex flex-col items-center gap-3 text-center">
+      <h2 className="text-3xl font-bold text-heading md:text-4xl">{title}</h2>
+      {children && (
+        <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">
+          {children}
+        </p>
+      )}
+    </div>
   );
 }

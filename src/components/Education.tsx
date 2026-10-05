@@ -1,26 +1,27 @@
 import { education } from "../data/constants";
-import EducationCard from "./EducationCard";
 import SectionHeading from "./SectionHeading";
-import Timeline from "./Timeline";
 
 export default function Education() {
   return (
-    <section
-      id="education"
-      className="relative z-[1] flex flex-col items-center justify-center pb-[60px] max-tab:p-0"
-    >
-      <div className="relative flex w-full max-w-[1350px] flex-col items-center justify-between gap-3 px-4 pt-10">
-        <SectionHeading title="Education">
-          My education has been a journey of self-discovery and growth. My educational details
-          are as follows.
-        </SectionHeading>
-        <Timeline
-          dotSide="right"
-          items={education.map((item) => ({
-            key: item.id,
-            content: <EducationCard education={item} />,
-          }))}
-        />
+    <section id="education" className="bg-surface py-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <SectionHeading title="Education" />
+        <div className="grid gap-6 md:grid-cols-2">
+          {education.map((edu) => (
+            <article key={edu.id} className="rounded-xl bg-bg p-6 ring-1 ring-line">
+              <div className="flex items-center gap-4">
+                <img src={edu.img} alt="" className="size-12 rounded-md object-contain" />
+                <div>
+                  <h3 className="font-semibold leading-tight">{edu.school}</h3>
+                  <p className="text-xs text-muted">{edu.date}</p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm font-medium">{edu.degree}</p>
+              <p className="mt-1 text-sm text-primary">{edu.grade}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{edu.desc}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

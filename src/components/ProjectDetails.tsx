@@ -1,9 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import type { Project } from "../types";
-import { CloseIcon, GitHubIcon, LinkedInIcon } from "./icons";
-
-const button =
-  "w-full rounded-lg px-4 py-3 text-center font-semibold transition-all duration-500 max-[600px]:text-xs";
+import { CloseIcon } from "./icons";
 
 export default function ProjectDetails({
   project,
@@ -12,89 +9,76 @@ export default function ProjectDetails({
   project: Project;
   onClose: () => void;
 }) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
   useEffect(() => {
-    dialogRef.current?.showModal();
-    const { overflow } = document.body.style;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = overflow;
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
     };
-  }, []);
+  }, [onClose]);
 
   return (
-    <dialog
-      ref={dialogRef}
-      aria-label={project.title}
-      onClose={onClose}
-      onClick={(e) => e.target === dialogRef.current && onClose()}
-      className="m-0 h-full max-h-none w-full max-w-none overflow-y-auto bg-transparent p-0 backdrop:bg-black/65"
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-title"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-fg/50 p-4 backdrop-blur-sm"
+      onClick={onClose}
     >
-      <div className="relative mx-auto my-[50px] flex w-[calc(100%-24px)] max-w-[800px] flex-col rounded-2xl bg-card p-5 text-fg">
+      <div
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-xl bg-bg p-6 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           type="button"
-          aria-label="Close"
           onClick={onClose}
-          className="absolute top-2.5 right-5 cursor-pointer text-2xl"
+          aria-label="Close"
+          className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-surface text-lg hover:bg-line"
         >
           <CloseIcon />
         </button>
-        <img
-          src={project.image}
-          alt=""
-          className="mt-[30px] w-full rounded-xl object-cover shadow-[0_0_10px_0_rgba(0,0,0,0.3)]"
-        />
-        <h2 className="mx-1.5 mt-2 text-[28px] font-semibold max-[600px]:text-2xl">
+        <img src={project.image} alt="" className="aspect-video w-full rounded-lg object-cover" />
+        <p className="mt-5 text-xs text-muted">{project.date}</p>
+        <h2 id="project-title" className="mt-1 text-2xl font-semibold">
           {project.title}
         </h2>
-        <p className="mx-1.5 my-0.5 text-muted max-md:text-xs">{project.date}</p>
-        <div className="my-2 flex flex-wrap max-[600px]:my-1">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="m-1 rounded-lg bg-primary/[.125] px-2 py-1 text-sm text-primary max-[600px]:text-xs"
-            >
-              {tag}
-            </span>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {project.tags.map((t) => (
+            <li key={t} className="rounded-full bg-surface px-3 py-1 text-xs">
+              {t}
+            </li>
           ))}
-        </div>
-        <p className="mx-1.5 my-2 max-[600px]:text-sm">{project.description}</p>
+        </ul>
+        <p className="mt-4 leading-relaxed text-muted">{project.description}</p>
 
         {project.member && (
-          <>
-            <h3 className="mx-1.5 my-2 text-xl font-semibold max-[600px]:text-base">Members</h3>
-            <ul className="mx-1.5 my-3 flex flex-col flex-wrap gap-1.5 max-[600px]:my-1">
-              {project.member.map((member) => (
-                <li key={member.name} className="flex items-center gap-3">
-                  <img
-                    src={member.img}
-                    alt=""
-                    className="mb-1 size-[50px] rounded-full object-cover shadow-[0_0_10px_0_rgba(0,0,0,0.3)] max-[600px]:size-8"
-                  />
-                  <span className="w-[200px] font-medium max-[600px]:text-sm">{member.name}</span>
-                  {member.github && (
-                    <a href={member.github} target="_blank" rel="noreferrer" aria-label={`${member.name} on GitHub`} className="text-2xl">
-                      <GitHubIcon />
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold">Team</h3>
+            <ul className="mt-3 flex flex-wrap gap-4">
+              {project.member.map((m) => (
+                <li key={m.name} className="flex items-center gap-2 text-sm">
+                  <img src={m.img} alt="" className="size-9 rounded-full object-cover" />
+                  {m.linkedin ? (
+                    <a href={m.linkedin} target="_blank" rel="noreferrer" className="hover:text-primary">
+                      {m.name}
                     </a>
-                  )}
-                  {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.name} on LinkedIn`} className="text-2xl">
-                      <LinkedInIcon />
-                    </a>
+                  ) : (
+                    m.name
                   )}
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         )}
 
-        <div className="my-3 flex justify-end gap-3">
+        <div className="mt-8 flex gap-3">
           <a
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className={`${button} bg-bg-light text-muted hover:bg-bg-light/60`}
+            className="flex-1 rounded-md py-2.5 text-center text-sm font-medium ring-1 ring-line hover:ring-primary"
           >
             View Code
           </a>
@@ -103,13 +87,13 @@ export default function ProjectDetails({
               href={project.webapp}
               target="_blank"
               rel="noreferrer"
-              className={`${button} bg-primary text-fg hover:bg-primary/60`}
+              className="flex-1 rounded-md bg-primary py-2.5 text-center text-sm font-medium text-white hover:bg-primary-dark"
             >
-              View Live App
+              Live Demo
             </a>
           )}
         </div>
       </div>
-    </dialog>
+    </div>
   );
 }
