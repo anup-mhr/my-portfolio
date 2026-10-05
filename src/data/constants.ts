@@ -152,7 +152,7 @@ export const experiences: Experience[] = [
     role: "Full Stack Developer",
     company: "Palm Mind technologies",
     date: "Nov 2024 - present",
-    desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintainingdifferent backend projects. I also worked on creating a bot for my own college using botpress.",
+    desc: "Building and shipping full stack products end to end, from REST and NestJS services to React interfaces. I design APIs, manage cloud infrastructure on AWS (S3, EC2), and integrate Python-based AI services into production apps.",
     skills: [
       "Node Js",
       "Express Js",
@@ -170,7 +170,7 @@ export const experiences: Experience[] = [
     role: "Node Js Intern",
     company: "Amnil technologies",
     date: "Jan 2024 - Apr 2024",
-    desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintainingdifferent backend projects. I also worked on creating a bot for my own college using botpress.",
+    desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintaining different backend projects. I also worked on creating a bot for my own college using botpress.",
     skills: [
       "Node Js",
       "Express Js",
