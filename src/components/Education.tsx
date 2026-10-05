@@ -3,8 +3,8 @@ import SectionHeading from "./SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="bg-surface py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="education" className="section-y bg-surface">
+      <div className="container-x max-w-5xl">
         <SectionHeading eyebrow="Learning" title="Education">
           The foundations behind the work.
         </SectionHeading>

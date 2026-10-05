@@ -74,8 +74,8 @@ function initials(name: string) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-surface py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="experience" className="section-y bg-surface">
+      <div className="container-x max-w-4xl">
         <SectionHeading eyebrow="Career" title="Experience">
           Where I&apos;ve been putting my skills to work.
         </SectionHeading>
@@ -117,7 +117,7 @@ export default function Experience() {
                             Current
                           </span>
                         )}
-                        <p className="text-xs font-medium text-muted">{exp.date}</p>
+                        <p className="text-xs font-medium tabular-nums text-muted">{exp.date}</p>
                       </div>
                     </header>
 

@@ -14,18 +14,17 @@ export default function SectionHeading({
   const centered = align === "center";
   return (
     <div
-      className={`mb-14 flex flex-col gap-3 ${centered ? "items-center text-center" : "items-start text-left"}`}
+      data-reveal
+      className={`mb-12 flex flex-col gap-4 md:mb-16 ${centered ? "items-center text-center" : "items-start text-left"}`}
     >
       {eyebrow && (
-        <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
           <span aria-hidden="true" className="h-px w-6 bg-primary" />
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-heading md:text-4xl">{title}</h2>
-      {children && (
-        <p className="max-w-xl text-sm leading-relaxed text-muted md:text-base">{children}</p>
-      )}
+      <h2 className="text-h2 font-bold tracking-[-0.02em] text-heading">{title}</h2>
+      {children && <p className="max-w-[60ch] text-lead text-muted">{children}</p>}
     </div>
   );
 }

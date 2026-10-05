@@ -3,20 +3,20 @@ import SectionHeading from "./SectionHeading";
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="about" className="section-y"><div className="container-x max-w-5xl">
       <SectionHeading eyebrow="About" title="Who am I?" />
-      <div data-reveal className="mx-auto -mt-6 max-w-3xl text-center leading-relaxed">
+      <div data-reveal className="mx-auto -mt-6 max-w-[65ch] text-center text-lead">
         <p>{Bio.description}</p>
         <p className="mt-3 font-semibold">
           {"\u201C"} Always learning, always shipping. {"\u201D"}
         </p>
       </div>
 
-      <dl className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <dl className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} data-reveal className="flex flex-col-reverse rounded-2xl bg-surface p-5 text-center">
             <dt className="mt-1 text-xs text-muted">{s.label}</dt>
-            <dd className="text-3xl font-bold text-primary md:text-4xl">
+            <dd className="text-3xl font-bold tabular-nums tracking-tight text-primary md:text-4xl">
               <span data-count={s.value}>{s.value}</span>
               {s.suffix}
             </dd>
@@ -28,7 +28,7 @@ export default function About() {
         Here are the tools I work with
       </p>
 
-      <div className="mt-8 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((group) => (
           <div key={group.title} data-reveal>
             <h3 className="mb-4 border-b border-line pb-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
@@ -53,6 +53,6 @@ export default function About() {
           </div>
         ))}
       </div>
-    </section>
+    </div></section>
   );
 }

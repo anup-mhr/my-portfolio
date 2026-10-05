@@ -4,14 +4,32 @@
   --color-bg: #ffffff;
   --color-surface: #f6f4f2;
   --color-fg: #1a1a1a;
-  --color-heading: #3f4756;
-  --color-muted: #7a7f88;
+  --color-heading: #2f3542;
+  --color-muted: #6b717b;
   --color-line: #e7e4e1;
   --color-primary: #a83237;
   --color-primary-dark: #8a262b;
 
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-script: "Yellowtail", cursive;
+
+  --text-display: clamp(3rem, 2rem + 4.5vw, 5rem);
+  --text-display--line-height: 1.1;
+  --text-h2: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --text-h2--line-height: 1.15;
+  --text-lead: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  --text-lead--line-height: 1.75;
+}
+
+@utility section-y {
+  padding-block: clamp(4.5rem, 3rem + 6vw, 7.5rem);
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: clamp(1.25rem, 0.75rem + 2.5vw, 2rem);
 }
 
 html {
@@ -21,8 +39,31 @@ html {
 
 body {
   @apply bg-bg font-sans text-fg antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 ::selection {
   @apply bg-primary text-white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

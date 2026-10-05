@@ -2,6 +2,38 @@ import { useState, type FormEvent } from "react";
 import { Bio, EMAILJS } from "../data/constants";
 import SectionHeading from "./SectionHeading";
 
+function CopyEmail() {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(Bio.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${Bio.email}`;
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      className="mt-3 inline-flex min-h-11 w-fit items-center gap-2 rounded-lg px-3 text-sm font-medium text-heading transition-colors hover:text-primary"
+    >
+      <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        {copied ? (
+          <path d="m5 12 5 5L20 7" />
+        ) : (
+          <>
+            <rect x="9" y="9" width="11" height="11" rx="2" />
+            <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+          </>
+        )}
+      </svg>
+      <span aria-live="polite">{copied ? "Email copied!" : "Copy email address"}</span>
+    </button>
+  );
+}
+
 type Status = { state: "idle" | "sending" | "sent" } | { state: "error"; message: string };
 
 const field =
@@ -53,7 +85,7 @@ export default function Contact() {
   const sending = status.state === "sending";
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="contact" className="section-y"><div className="container-x">
       <div className="grid gap-12 overflow-hidden rounded-3xl bg-surface p-6 md:p-12 lg:grid-cols-[1fr_1.3fr]">
         <div className="flex flex-col">
           <SectionHeading eyebrow="Contact" title="Let's talk" align="left">
@@ -81,6 +113,8 @@ export default function Contact() {
               </li>
             ))}
           </ul>
+
+          <CopyEmail />
 
           <p className="mt-6 flex items-center gap-2 text-xs text-muted">
             <span className="size-2 rounded-full bg-green-500" />
@@ -164,6 +198,6 @@ export default function Contact() {
           )}
         </div>
       </div>
-    </section>
+    </div></section>
   );
 }

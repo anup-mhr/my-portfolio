@@ -12,10 +12,10 @@ export default function Hero() {
   const [first, ...rest] = Bio.name.split(" ");
 
   return (
-    <section id="home" className="mx-auto flex min-h-[calc(100svh-72px)] max-w-6xl items-center px-6 py-16">
-      <div className="flex w-full flex-col items-center gap-14 md:flex-row md:gap-20">
+    <section id="home" className="container-x flex min-h-[calc(100svh-72px)] items-center py-12 md:py-16">
+      <div className="flex w-full flex-col items-center gap-12 md:flex-row md:justify-center md:gap-16 lg:gap-24">
         <div className="flex flex-col items-center gap-6">
-          <div data-hero-photo className="relative size-64 md:size-80">
+          <div data-hero-photo className="relative size-60 sm:size-72 lg:size-80">
             <img
               src="/assets/Anup.jpg"
               alt={`Portrait of ${Bio.name}`}
@@ -46,28 +46,32 @@ export default function Hero() {
           <p data-hero-line className="text-2xl">
             <span className="text-primary">नमस्ते !</span> I&apos;m
           </p>
-          <h1 data-hero-line className="mt-2 font-script text-6xl leading-tight md:text-7xl">
+          <h1 data-hero-line className="mt-2 font-script text-display">
             {first} <span className="text-primary">{rest.join(" ")}</span>
+            <span className="sr-only"> — Software Engineer specializing in AWS and serverless</span>
           </h1>
-          <p data-hero-line className="mt-4 text-sm leading-relaxed text-muted md:text-base">
+          <p data-hero-line className="mt-5 max-w-[52ch] text-lead text-muted">
             A software engineer from {Bio.location} building production-grade
             serverless, microservice and multi-tenant SaaS platforms with
             TypeScript, Node.js, React and AWS.
           </p>
-          <div data-hero-line className="mt-8 flex flex-wrap items-center gap-3">
+          <div data-hero-line className="mt-8 flex flex-wrap items-center justify-center gap-3 md:justify-start">
             <a
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+              href="#contact"
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-white shadow-md shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary-dark"
             >
-              My Projects <span aria-hidden="true">{"->"}</span>
+              Let&apos;s talk <span aria-hidden="true">{"\u2192"}</span>
             </a>
             <a
               href={Bio.resume}
               target="_blank"
               rel="noreferrer"
-              className="rounded-md px-5 py-2.5 text-sm font-medium ring-1 ring-line transition-colors hover:ring-primary"
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg px-6 text-sm font-medium text-heading ring-1 ring-line transition-colors hover:text-primary hover:ring-primary"
             >
               Download CV
+              <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" />
+              </svg>
             </a>
           </div>
         </div>
