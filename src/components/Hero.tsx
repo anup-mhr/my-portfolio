@@ -15,25 +15,24 @@ export default function Hero() {
     <section id="home" className="mx-auto flex min-h-[calc(100svh-72px)] max-w-6xl items-center px-6 py-16">
       <div className="flex w-full flex-col items-center gap-14 md:flex-row md:gap-20">
         <div className="flex flex-col items-center gap-6">
-          <div className="relative size-64 md:size-80">
+          <div data-hero-photo className="relative size-64 md:size-80">
             <img
-              data-hero-photo
               src="/assets/Anup.jpg"
               alt={`Portrait of ${Bio.name}`}
               className="size-full rounded-full border-4 border-primary object-cover p-1.5"
             />
             {SOCIALS.map(({ href, label, Icon, pos }) => (
-              <a
-                key={label}
-                data-hero-social
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className={`absolute ${pos} flex size-11 items-center justify-center rounded-full bg-bg text-xl text-fg shadow-md ring-1 ring-line transition hover:-translate-y-0.5 hover:bg-primary hover:text-white`}
-              >
-                <Icon />
-              </a>
+              <span key={label} data-hero-social className={`absolute z-10 ${pos}`}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex size-11 items-center justify-center rounded-full bg-bg text-xl text-fg shadow-md ring-1 ring-line transition duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 hover:ring-primary"
+                >
+                  <Icon />
+                </a>
+              </span>
             ))}
           </div>
           <p data-hero-line className="flex items-center gap-3 text-sm text-muted">

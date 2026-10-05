@@ -32,10 +32,10 @@ export const Bio = {
 };
 
 export const stats = [
-  { value: 2, suffix: "+", label: "Years building software" },
-  { value: 35, suffix: "%", label: "Faster API responses" },
-  { value: 57, suffix: "%", label: "Smaller Docker images" },
-  { value: 15, suffix: "", label: "Security findings resolved" },
+  { value: 2, suffix: "+", label: "Years of experience" },
+  { value: 15, suffix: "+", label: "Projects shipped" },
+  { value: 3, suffix: "", label: "Companies worked with" },
+  { value: 25, suffix: "+", label: "Technologies used" },
 ];
 
 export const skills: SkillGroup[] = [

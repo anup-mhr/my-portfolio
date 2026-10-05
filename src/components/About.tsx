@@ -14,13 +14,12 @@ export default function About() {
 
       <dl className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} data-reveal className="rounded-2xl bg-surface p-5 text-center">
-            <dt className="sr-only">{s.label}</dt>
+          <div key={s.label} data-reveal className="flex flex-col-reverse rounded-2xl bg-surface p-5 text-center">
+            <dt className="mt-1 text-xs text-muted">{s.label}</dt>
             <dd className="text-3xl font-bold text-primary md:text-4xl">
               <span data-count={s.value}>{s.value}</span>
               {s.suffix}
             </dd>
-            <dd className="mt-1 text-xs text-muted">{s.label}</dd>
           </div>
         ))}
       </dl>

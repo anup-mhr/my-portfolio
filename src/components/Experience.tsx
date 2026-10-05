@@ -1,5 +1,68 @@
+import { useState } from "react";
 import { experiences } from "../data/constants";
 import SectionHeading from "./SectionHeading";
+
+const VISIBLE = 2;
+
+function Bullet({ text }: { text: string }) {
+  return (
+    <li className="flex gap-3 text-sm leading-relaxed">
+      <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+      {text}
+    </li>
+  );
+}
+
+function Highlights({ id, items }: { id: number; items: string[] }) {
+  const [expanded, setExpanded] = useState(false);
+  const extra = items.slice(VISIBLE);
+  const panelId = `exp-more-${id}`;
+
+  return (
+    <div className="mt-4">
+      <ul className="flex flex-col gap-2.5">
+        {items.slice(0, VISIBLE).map((h) => (
+          <Bullet key={h} text={h} />
+        ))}
+      </ul>
+      {extra.length > 0 && (
+        <>
+          <div
+            id={panelId}
+            className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
+              expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <ul className="flex flex-col gap-2.5 overflow-hidden pt-2.5" inert={!expanded}>
+              {extra.map((h) => (
+                <Bullet key={h} text={h} />
+              ))}
+            </ul>
+          </div>
+          <button
+            type="button"
+            aria-expanded={expanded}
+            aria-controls={panelId}
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            {expanded ? "Show less" : `See ${extra.length} more`}
+            <svg
+              viewBox="0 0 24 24"
+              className={`size-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
 
 function initials(name: string) {
   return name
@@ -60,16 +123,7 @@ export default function Experience() {
 
                     <p className="mt-4 text-sm leading-relaxed text-muted">{exp.desc}</p>
 
-                    {exp.highlights && (
-                      <ul className="mt-4 flex flex-col gap-2.5">
-                        {exp.highlights.map((h) => (
-                          <li key={h} className="flex gap-3 text-sm leading-relaxed">
-                            <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                            {h}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {exp.highlights && <Highlights id={exp.id} items={exp.highlights} />}
 
                     {exp.skills && (
                       <ul className="mt-5 flex flex-wrap gap-2" aria-label="Skills used">
