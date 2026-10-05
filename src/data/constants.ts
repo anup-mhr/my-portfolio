@@ -177,8 +177,7 @@ export const projects: Project[] = [
     date: "Dec 2024 - Jan 2025",
     description:
       "Demonstrates how to connect your business with AI Agent (Openai WebRTC) with RAG functionalities",
-    image:
-      "https://th.bing.com/th/id/OIP.q7Qs4-t2b1KXdSzUh8_w5wHaHa?rs=1&pid=ImgDetMain",
+    image: "/assets/ai-agent-webrtc.png",
     tags: ["React Js", "Node Js", "Express Js", "Typescript", "Open AI"],
     categories: ["Fullstack", "Frontend", "Backend", "AI Integration"],
     github: "https://github.com/anup-mhr/talk-to-ai-agent-openai-webRTC-.git",
