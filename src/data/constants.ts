@@ -17,14 +17,13 @@ export const EMAILJS = {
 
 export const Bio = {
   name: "Anup Maharjan",
-  roles: [
-    "Web Developer",
-    "MERN Developer",
-    "PERN Developer",
-    "Full Stack Developer",
-  ],
+  title: "Software Engineer",
+  tagline: "Software Engineer | AWS | Serverless",
+  location: "Kathmandu, Nepal",
+  email: "anupmhrzn16@gmail.com",
+  phone: "+977 9803874819",
   description:
-    "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+    "Software Engineer specializing in TypeScript, Node.js, React and AWS, with experience building production-grade serverless, microservice and multi-tenant SaaS platforms. Experienced in system architecture, AI applications, cloud infrastructure, security and payment systems.",
   github: "https://github.com/anup-mhr",
   resume: "/assets/resume/CV-Anup-Maharjan.pdf",
   linkedin: "https://www.linkedin.com/in/anup-mhr/",
@@ -32,115 +31,72 @@ export const Bio = {
   facebook: "https://www.facebook.com/anup.mhr.004",
 };
 
+export const stats = [
+  { value: 2, suffix: "+", label: "Years building software" },
+  { value: 35, suffix: "%", label: "Faster API responses" },
+  { value: 57, suffix: "%", label: "Smaller Docker images" },
+  { value: 15, suffix: "", label: "Security findings resolved" },
+];
+
 export const skills: SkillGroup[] = [
+  {
+    title: "Languages",
+    skills: [
+      { name: "TypeScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "JavaScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "SQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" },
+      { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Java", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    ],
+  },
   {
     title: "Frontend",
     skills: [
-      {
-        name: "HTML5",
-        image: "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png",
-      },
-      {
-        name: "CSS3",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
-      },
-      {
-        name: "JavaScript",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      },
-      {
-        name: "Typescript",
-        image:
-          "https://th.bing.com/th/id/OIP.maKe3jXsLd8flovNsX2_3QHaHa?rs=1&pid=ImgDetMain",
-      },
-      {
-        name: "Bootstrap",
-        image:
-          "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png",
-      },
-      {
-        name: "React Js",
-        image:
-          "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
-      },
-      {
-        name: "Tailwind",
-        image:
-          "https://creazilla-store.fra1.digitaloceanspaces.com/icons/3257079/file-type-tailwind-icon-md.png",
-      },
+      { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Next.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+      { name: "Vite", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" },
+      { name: "Tailwind CSS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "Apollo Client", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apollographql/apollographql-original.svg" },
+      { name: "Zustand", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "React Native", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     ],
   },
   {
     title: "Backend",
     skills: [
-      {
-        name: "Node Js",
-        image: "https://nodejs.org/static/images/logo.svg",
-      },
-      {
-        name: "Java",
-        image:
-          "https://th.bing.com/th/id/R.9700daf741d5f5b75abf6f7cee2c8be9?rik=%2fdfsBtxTyvR09A&pid=ImgRaw&r=0",
-      },
-      {
-        name: "Express Js",
-        image:
-          "https://th.bing.com/th/id/R.d14b288ef88c59b105648c89386fdb2c?rik=rRND4olvqXoz%2fA&pid=ImgRaw&r=0",
-      },
-      {
-        name: "MySQL",
-        image: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg",
-      },
-      {
-        name: "Postgresql",
-        image: "https://www.postgresql.org/media/img/about/press/elephant.png",
-      },
-      {
-        name: "MongoDB",
-        image: "https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg",
-      },
+      { name: "Node.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "GraphQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+      { name: "Apollo Server", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apollographql/apollographql-original.svg" },
+      { name: "Express.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "NestJS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" },
+      { name: "REST APIs", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+      { name: "Socket.io", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" },
     ],
   },
   {
-    title: "Others",
+    title: "Databases",
     skills: [
-      {
-        name: "Git",
-        image:
-          "https://th.bing.com/th/id/R.5dad01124c25d19c78aa763d94c6c3ee?rik=O6yFxpwCtIymFA&pid=ImgRaw&r=0",
-      },
-      {
-        name: "GitHub",
-        image:
-          "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-      },
-      {
-        name: "Docker",
-        image:
-          "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      },
-      {
-        name: "AWS EC2",
-        image:
-          "https://media.printables.com/media/prints/128175/images/1229540_1fa51ee6-6136-48b0-9c8b-44990845c1b4/thumbs/inside/1280x960/png/ec2-1.webp",
-      },
-      {
-        name: "AWS S3",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png",
-      },
-      {
-        name: "Postman",
-        image:
-          "https://w7.pngwing.com/pngs/17/131/png-transparent-postman-logo-thumbnail-tech-companies.png",
-      },
-      {
-        name: "Swagger UI",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png",
-      },
+      { name: "MySQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Postgres", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Redis", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      { name: "DynamoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dynamodb/dynamodb-original.svg" },
+      { name: "OpenSearch", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opensearch/opensearch-original.svg" },
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: [
+      { name: "AWS Lambda", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "API Gateway", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "RDS / S3 / SES / SQS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "EventBridge", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Bedrock", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "EC2 / Firehose / Athena", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "AWS CDK", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Serverless Framework", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "GitHub Actions", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
+      { name: "Docker", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     ],
   },
 ];
@@ -148,38 +104,48 @@ export const skills: SkillGroup[] = [
 export const experiences: Experience[] = [
   {
     id: 0,
-    img: "https://palmmind.com/images/palmmind-logo.webp",
-    role: "Full Stack Developer",
-    company: "Palm Mind technologies",
-    date: "Nov 2024 - present",
-    desc: "Building and shipping full stack products end to end, from REST and NestJS services to React interfaces. I design APIs, manage cloud infrastructure on AWS (S3, EC2), and integrate Python-based AI services into production apps.",
-    skills: [
-      "Node Js",
-      "Express Js",
-      "MongoDb",
-      "Nest",
-      "React",
-      "S3",
-      "EC2",
-      "Python",
+    role: "Mid Full Stack Developer",
+    company: "Ghum Nepal Innovation",
+    location: "Kathmandu, Nepal",
+    date: "Feb 2026 - Present",
+    desc: "Building production SaaS and marketplace systems using TypeScript, Node.js, GraphQL, React and AWS.",
+    highlights: [
+      "Architected a multi-tenant SaaS platform with tenant-isolated data, subscription and entitlement management, billing, automated tenant provisioning and database migrations.",
+      "Architected and shipped ghumSign, an e-signature platform with OTP-verified signing, PDF stamping, tamper-evident audit trails, document verification and Nepal NPKI/DSC certificate sealing.",
+      "Resolved 15 security audit findings, including a cross-tenant authorization vulnerability, and implemented centralized entitlement and product-access controls.",
+      "Built an Amazon Bedrock AI trip planner, OpenSearch-powered property search, Stripe payment workflows, loyalty and coupon systems, and multi-channel notifications.",
+      "Owned AWS infrastructure and CI/CD using AWS CDK and GitHub Actions, while developing Next.js and React applications across products.",
     ],
+    skills: ["TypeScript", "Node.js", "GraphQL", "React", "Next.js", "AWS CDK", "Bedrock", "OpenSearch", "Stripe", "GitHub Actions"],
   },
   {
     id: 1,
-    img: "https://www.amniltech.com/assets/img/logo.png",
-    role: "Node Js Intern",
-    company: "Amnil technologies",
-    date: "Jan 2024 - Apr 2024",
-    desc: "As a Node.js Intern, I gained hands on knowledge and real-world experience. During my internship, I worked on various projects, developing and maintaining different backend projects. I also worked on creating a bot for my own college using botpress.",
-    skills: [
-      "Node Js",
-      "Express Js",
-      "MongoDb",
-      "Postgres",
-      "Jest",
-      "Typescript",
-      "Botpress",
+    img: "https://palmmind.com/images/palmmind-logo.webp",
+    role: "Full Stack Developer",
+    company: "Palmmind Technology",
+    location: "Lalitpur, Nepal",
+    date: "Nov 2025 - Feb 2026",
+    desc: "Worked across backend architecture, infrastructure and frontend performance.",
+    highlights: [
+      "Contributed to backend architecture and performance optimization, improving API response times by 35%.",
+      "Reduced Docker image size by 57%, improving development and deployment efficiency.",
+      "Integrated 10+ third-party APIs and optimized shared modules and frontend performance, reducing page load times by 25%.",
     ],
+    skills: ["Node.js", "NestJS", "React", "Docker", "MongoDB", "AWS"],
+  },
+  {
+    id: 2,
+    img: "https://www.amniltech.com/assets/img/logo.png",
+    role: "Node Intern",
+    company: "Amnil Technology",
+    location: "Lalitpur, Nepal",
+    date: "Jan 2024 - Apr 2024",
+    desc: "Backend services and chatbot automation.",
+    highlights: [
+      "Developed backend services with Node.js, Express.js and Botpress for chatbot workflows and automation, integrating 3+ external APIs for dynamic responses.",
+      "Optimized database queries, reducing API latency by 15%.",
+    ],
+    skills: ["Node.js", "Express.js", "Botpress", "Postgres", "MongoDB", "Jest"],
   },
 ];
 
@@ -187,11 +153,11 @@ export const education: Education[] = [
   {
     id: 0,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBYt3mOD3WetX0pCeXndLLLa7MdrkTSOSEg&s",
-    school: "Virinchi College",
-    date: "2021-2025",
+    school: "Virinchi College, AeU",
+    date: "May 2021 - May 2025",
     grade: "3.32 CGPA",
     desc: "I graduated from Virinchi College with a Bachelor in Information & Communication Technology.",
-    degree: "Bachelor in Information & Communication Technology",
+    degree: "Bachelor in Information and Communication Technology",
   },
   {
     id: 1,

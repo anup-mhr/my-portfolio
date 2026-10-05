@@ -11,6 +11,7 @@ export default function Education() {
         <div className="grid gap-6 md:grid-cols-2">
           {education.map((edu) => (
             <article
+              data-reveal
               key={edu.id}
               className="group flex flex-col gap-5 rounded-2xl bg-bg p-7 ring-1 ring-line transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
             >

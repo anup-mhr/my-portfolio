@@ -21,6 +21,7 @@ async function sendEmail(form: HTMLFormElement) {
 }
 
 const channels = [
+  { label: "Email", href: `mailto:${Bio.email}`, value: Bio.email },
   { label: "LinkedIn", href: Bio.linkedin, value: "in/anup-mhr" },
   { label: "GitHub", href: Bio.github, value: "@anup-mhr" },
   { label: "Instagram", href: Bio.insta, value: "@_anup_mhrzn" },

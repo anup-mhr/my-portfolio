@@ -30,11 +30,13 @@ export interface Project {
 
 export interface Experience {
   id: number;
-  img: string;
+  img?: string;
   role: string;
   company: string;
+  location?: string;
   date: string;
   desc: string;
+  highlights?: string[];
   skills?: string[];
 }
 

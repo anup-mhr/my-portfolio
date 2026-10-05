@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useSiteAnimations } from "./hooks/useSiteAnimations";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -12,9 +13,11 @@ import type { Project } from "./types";
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  useSiteAnimations(rootRef);
 
   return (
-    <>
+    <div ref={rootRef}>
       <Navbar />
       <main className="w-full overflow-x-hidden">
         <Hero />
@@ -31,6 +34,6 @@ export default function App() {
           onClose={() => setSelectedProject(null)}
         />
       )}
-    </>
+    </div>
   );
 }

@@ -17,6 +17,7 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-6">
           <div className="relative size-64 md:size-80">
             <img
+              data-hero-photo
               src="/assets/Anup.jpg"
               alt={`Portrait of ${Bio.name}`}
               className="size-full rounded-full border-4 border-primary object-cover p-1.5"
@@ -24,6 +25,7 @@ export default function Hero() {
             {SOCIALS.map(({ href, label, Icon, pos }) => (
               <a
                 key={label}
+                data-hero-social
                 href={href}
                 target="_blank"
                 rel="noreferrer"
@@ -34,26 +36,26 @@ export default function Hero() {
               </a>
             ))}
           </div>
-          <p className="flex items-center gap-3 text-sm text-muted">
+          <p data-hero-line className="flex items-center gap-3 text-sm text-muted">
             <span className="h-px w-12 bg-muted/60" />
-            Full Stack Developer
+            {Bio.tagline}
             <span className="h-px w-12 bg-muted/60" />
           </p>
         </div>
 
         <div className="flex max-w-lg flex-col items-center text-center md:items-start md:text-left">
-          <p className="text-2xl">
+          <p data-hero-line className="text-2xl">
             <span className="text-primary">नमस्ते !</span> I&apos;m
           </p>
-          <h1 className="mt-2 font-script text-6xl leading-tight md:text-7xl">
+          <h1 data-hero-line className="mt-2 font-script text-6xl leading-tight md:text-7xl">
             {first} <span className="text-primary">{rest.join(" ")}</span>
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">
-            A backend-leaning full stack developer from Kathmandu, Nepal. I build
-            fast APIs, realtime apps and AI-powered tools with Node.js, React and
-            TypeScript.
+          <p data-hero-line className="mt-4 text-sm leading-relaxed text-muted md:text-base">
+            A software engineer from {Bio.location} building production-grade
+            serverless, microservice and multi-tenant SaaS platforms with
+            TypeScript, Node.js, React and AWS.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div data-hero-line className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
@@ -61,10 +63,12 @@ export default function Hero() {
               My Projects <span aria-hidden="true">{"->"}</span>
             </a>
             <a
-              href="#contact"
+              href={Bio.resume}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-md px-5 py-2.5 text-sm font-medium ring-1 ring-line transition-colors hover:ring-primary"
             >
-              Say hello
+              Download CV
             </a>
           </div>
         </div>
